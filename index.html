@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F1F5F9">
+<title>استخدام رسمی | ثبت درخواست استخدام</title>
+<meta name="description" content="ثبت درخواست استخدام رسمی و قانونی با بررسی شرایط، تخصص و سوابق کاری متقاضی و معرفی فرصت‌های شغلی متناسب با شرایط فرد">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<style>
+  :root{
+    --bg:#F1F5F9;
+    --surface:#FFFFFF;
+    --surface-soft:#F8FAFC;
+    --line:#E2E8F0;
+    --text:#0F172A;
+    --text-soft:#475569;
+    --text-muted:#94A3B8;
+    --primary:#1E40AF;
+    --primary-dark:#1E3A8A;
+    --primary-light:#EFF6FF;
+    --info-bg:#EFF6FF;
+    --info-border:#BFDBFE;
+    --info-text:#1E3A8A;
+
+    --ad-bg:#FFF7ED;
+    --ad-bg-2:#FFEDD5;
+    --ad-border:#FDBA74;
+    --ad-accent:#EA580C;
+    --ad-accent-dark:#C2410C;
+
+    --success:#059669;
+    --success-bg:#ECFDF5;
+    --success-border:#6EE7B7;
+    --warn:#F59E0B;
+    --warn-bg:#FFFBEB;
+    --danger:#DC2626;
+    --danger-bg:#FEF2F2;
+
+    --radius:16px;
+    --radius-sm:14px;
+    --shadow-sm:0 1px 3px rgba(15,23,42,.06);
+    --shadow-md:0 14px 34px -12px rgba(30,64,175,.45);
+    --shadow-card:0 14px 34px -18px rgba(30,64,175,.15);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'Vazirmatn', Tahoma, system-ui, -apple-system, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.9;
+    font-size:16px;
+    padding-bottom:40px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* =========================================================
+     AD-1: تبلیغ شناور بالا
+     ========================================================= */
+  .sticky-ad{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:linear-gradient(135deg, #FB923C 0%, #EA580C 100%);
+    color:#fff;
+    text-decoration:none;
+    padding:26px 18px;
+    text-align:center;
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.2px;
+    line-height:1.6;
+    box-shadow:0 6px 22px rgba(234,88,12,.4);
+    transition:.2s;
+    min-height:96px;
+  }
+  .sticky-ad:active{transform:scale(.99)}
+  .sticky-ad .sticky-icon{
+    font-size:1.4em;
+    animation:stickyBounce 1.8s ease-in-out infinite;
+  }
+  @keyframes stickyBounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-4px)}
+  }
+  .sticky-ad .arrow{
+    font-weight:900;
+    font-size:1.2em;
+    transition:transform .2s;
+  }
+  .sticky-ad:hover .arrow{transform:translateX(-5px)}
+
+  /* =========================================================
+     کانتینر اصلی
+     ========================================================= */
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:20px 16px;
+  }
+
+  /* =========================================================
+     کارت‌های کلی
+     ========================================================= */
+  .form-card,
+  .intro-card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+
+  .form-card h2{
+    font-size:19px;
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:22px;
+    padding-bottom:16px;
+    border-bottom:2px solid var(--surface-soft);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    line-height:1.5;
+  }
+
+  .form-card h2 .num{
+    background:linear-gradient(135deg, #2563EB 0%, #1E40AF 50%, #1E3A8A 100%);
+    color:#fff;
+    width:34px;height:34px;
+    border-radius:11px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    font-weight:800;
+    flex-shrink:0;
+    box-shadow:0 6px 16px -6px rgba(30,64,175,.55), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+
+  /* =========================================================
+     متن هدر / معرفی (فشرده)
+     ========================================================= */
+  .intro-card{
+    font-size:14px;
+    line-height:1.85;
+    color:var(--text-soft);
+  }
+  .intro-card .intro-title{
+    font-size:20px;
+    font-weight:800;
+    line-height:1.6;
+    color:var(--text);
+    margin-bottom:14px;
+    text-align:center;
+  }
+  .intro-card .intro-sub{
+    font-size:15px;
+    font-weight:800;
+    color:var(--text);
+    margin:10px 0 4px;
+    line-height:1.7;
+  }
+  .intro-card p{
+    margin:5px 0;
+    line-height:1.8;
+    font-size:14px;
+  }
+  .intro-card hr{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:14px 0;
+  }
+  .intro-card b{color:var(--text);font-weight:800}
+
+  /* =========================================================
+     هشدار VPN
+     ========================================================= */
+  .vpn-warning{
+    background:var(--danger-bg);
+    border:1.5px solid var(--danger);
+    border-radius:var(--radius-sm);
+    padding:16px 18px;
+    margin-bottom:18px;
+    text-align:center;
+    font-size:15px;
+    font-weight:800;
+    color:var(--danger);
+    line-height:1.9;
+    box-shadow:var(--shadow-sm);
+  }
+  .vpn-warning .vpn-icon{
+    display:block;
+    font-size:24px;
+    margin-bottom:6px;
+    line-height:1;
+  }
+  .vpn-warning .vpn-line{
+    display:block;
+  }
+
+  /* =========================================================
+     یادداشت بالای فرم
+     ========================================================= */
+  .form-note{
+    font-size:13px;
+    color:var(--text-muted);
+    text-align:center;
+    line-height:1.75;
+    margin:0 4px 18px;
+    padding:12px 14px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-sm);
+  }
+
+  /* =========================================================
+     فیلدها
+     ========================================================= */
+  .field{margin-bottom:22px}
+  .field:last-child{margin-bottom:0}
+
+  .field label{
+    display:block;
+    font-size:16px;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:10px;
+    line-height:1.6;
+  }
+  .field label .req{
+    color:var(--danger);
+    margin-right:4px;
+    font-weight:800;
+  }
+  .field label .opt{
+    color:var(--text-muted);
+    font-weight:500;
+    font-size:14px;
+    margin-right:6px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    background:var(--surface-soft);
+    border:1.5px solid transparent;
+    border-radius:var(--radius-sm);
+    padding:15px 16px;
+    font-size:16px;
+    font-family:inherit;
+    color:var(--text);
+    outline:none;
+    transition:.2s;
+    line-height:1.6;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder{
+    color:var(--text-muted);
+    font-size:15px;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--primary);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(30,64,175,.12);
+  }
+  .field textarea{
+    resize:vertical;
+    min-height:96px;
+    line-height:1.85;
+  }
+  .field select{
+    cursor:pointer;
+    -webkit-appearance:none;
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:left 14px center;
+    background-size:20px;
+    padding-left:46px;
+  }
+
+  .field-hint{
+    font-size:13px;
+    color:var(--text-muted);
+    line-height:1.7;
+    margin-top:8px;
+    padding-right:2px;
+  }
+
+  /* =========================================================
+     چک‌باکس پاسپورت
+     ========================================================= */
+  .checkbox-group{display:flex;flex-direction:column;gap:10px}
+  .checkbox-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:var(--surface-soft);
+    border:1.5px solid transparent;
+    border-radius:var(--radius-sm);
+    padding:15px 16px;
+    cursor:pointer;
+    transition:.2s;
+    font-size:16px;
+    font-weight:600;
+    color:var(--text-soft);
+    margin:0;
+    line-height:1.5;
+  }
+  .checkbox-item:hover{border-color:var(--line)}
+  .checkbox-item input{display:none}
+  .checkbox-box{
+    flex-shrink:0;
+    width:24px;height:24px;
+    border-radius:7px;
+    border:2px solid #CBD5E1;
+    background:#fff;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+    position:relative;
+  }
+  .checkbox-box::after{
+    content:"";
+    width:12px;height:7px;
+    border-left:2.5px solid #fff;
+    border-bottom:2.5px solid #fff;
+    transform:rotate(-45deg) translate(1px,-2px);
+    opacity:0;
+    transition:.2s;
+  }
+  .checkbox-item:has(input:checked){
+    border-color:var(--primary);
+    background:var(--primary-light);
+    color:var(--primary-dark);
+    font-weight:800;
+  }
+  .checkbox-item:has(input:checked) .checkbox-box{
+    background:linear-gradient(135deg, #2563EB 0%, #1E40AF 50%, #1E3A8A 100%);
+    border-color:var(--primary);
+    box-shadow:0 4px 12px -4px rgba(30,64,175,.55);
+  }
+  .checkbox-item:has(input:checked) .checkbox-box::after{opacity:1}
+
+  /* =========================================================
+     رادیو
+     ========================================================= */
+  .radio-group{display:flex;gap:10px}
+  .radio-group label{
+    flex:1;
+    background:var(--surface-soft);
+    border:1.5px solid transparent;
+    border-radius:var(--radius-sm);
+    padding:15px 12px;
+    font-size:16px;
+    font-weight:600;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+    color:var(--text-soft);
+    margin:0;
+  }
+  .radio-group label:hover{border-color:var(--line)}
+  .radio-group input{display:none}
+  .radio-group label:has(input:checked){
+    border-color:var(--primary);
+    background:var(--primary-light);
+    color:var(--primary-dark);
+    font-weight:800;
+  }
+
+  /* =========================================================
+     AD-2 و AD-3: iframe — بدون کادر، بدون فضای اضافه
+     ========================================================= */
+  .ad-iframe-wrap{
+    width:100%;
+    margin:0 0 18px;
+    background:transparent;
+    overflow:hidden;
+  }
+  .ad-iframe{
+    width:100%;
+    height:auto;
+    border:none;
+    display:block;
+    background:transparent;
+  }
+
+  /* =========================================================
+     AD-4: زیر دکمه ارسال (سبز)
+     ========================================================= */
+  .ad4{
+    display:block;
+    background:linear-gradient(135deg, #064E3B 0%, #065F46 50%, #047857 100%);
+    border:2px solid #10B981;
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin:22px 0;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    transition:.25s;
+    box-shadow:0 8px 28px rgba(16,185,129,.3);
+  }
+  .ad4:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(16,185,129,.5)}
+  .ad4::before{
+    content:"🎁 تبلیغ";
+    position:absolute;top:-13px;right:20px;
+    background:#10B981;
+    color:#042F2E;
+    font-size:13px;
+    font-weight:800;
+    padding:4px 14px;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(16,185,129,.5);
+    letter-spacing:.2px;
+    z-index:2;
+  }
+  .ad4 .ad4-live{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+    padding:4px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+    position:relative;
+    z-index:2;
+  }
+  .ad4 .ad4-live .dot{
+    width:8px;height:8px;
+    background:#4ADE80;
+    border-radius:50%;
+    box-shadow:0 0 8px #4ADE80;
+    animation:ad4Blink 1.4s ease-in-out infinite;
+  }
+  @keyframes ad4Blink{
+    0%,100%{opacity:1}
+    50%{opacity:.3}
+  }
+  .ad4 .ad4-title{
+    font-size:20px;
+    font-weight:800;
+    line-height:1.6;
+    color:#fff;
+    margin-bottom:16px;
+    display:block;
+    position:relative;
+    z-index:2;
+    text-shadow:0 2px 10px rgba(0,0,0,.3);
+  }
+  .ad4 .ad4-title b{
+    color:#FCD34D;
+    font-weight:900;
+    font-size:1.15em;
+    padding:0 4px;
+  }
+  .ad4 .ad4-cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    background:#fff;
+    color:#064E3B;
+    padding:16px 22px;
+    border-radius:12px;
+    font-size:17px;
+    font-weight:800;
+    box-shadow:
+      0 5px 0 rgba(0,0,0,.25),
+      0 10px 22px rgba(0,0,0,.25);
+    position:relative;
+    z-index:2;
+    letter-spacing:.2px;
+    text-align:center;
+    transition:.15s;
+  }
+
+  /* =========================================================
+     AD-5 و AD-6: قرمز (Urgency)
+     ========================================================= */
+  .ad5{
+    display:block;
+    background:linear-gradient(135deg, #7F1D1D 0%, #991B1B 50%, #B91C1C 100%);
+    border:2px solid #EF4444;
+    border-radius:var(--radius);
+    padding:24px 24px;
+    margin:22px 0;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    transition:.25s;
+    box-shadow:0 8px 30px rgba(239,68,68,.4);
+    animation:ad5Alert 3s ease-in-out infinite;
+  }
+  @keyframes ad5Alert{
+    0%,100%{box-shadow:0 8px 30px rgba(239,68,68,.4)}
+    50%{box-shadow:0 8px 30px rgba(239,68,68,.4), 0 0 40px rgba(239,68,68,.7)}
+  }
+  .ad5:hover{transform:translateY(-2px)}
+  .ad5::before{
+    content:"🎁 تبلیغ";
+    position:absolute;top:-13px;right:20px;
+    background:#EF4444;
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    padding:4px 14px;
+    border-radius:8px;
+    box-shadow:0 3px 10px rgba(239,68,68,.6);
+    letter-spacing:.2px;
+    z-index:2;
+    animation:ad5Badge 1.5s ease-in-out infinite;
+  }
+  @keyframes ad5Badge{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.08)}
+  }
+  .ad5 .ad5-urgent{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    padding:5px 14px;
+    border-radius:999px;
+    margin-bottom:14px;
+    position:relative;
+    z-index:2;
+    letter-spacing:.3px;
+  }
+  .ad5 .ad5-title{
+    font-size:21px;
+    font-weight:800;
+    line-height:1.6;
+    color:#fff;
+    margin-bottom:16px;
+    display:block;
+    position:relative;
+    z-index:2;
+    text-shadow:0 2px 10px rgba(0,0,0,.4);
+  }
+  .ad5 .ad5-title b{
+    color:#FCD34D;
+    font-weight:900;
+    font-size:1.15em;
+    padding:0 4px;
+    text-shadow:0 0 20px rgba(252,211,77,.6);
+  }
+  .ad5 .ad5-cta{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    background:linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+    color:#7F1D1D;
+    padding:17px 22px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:900;
+    box-shadow:
+      0 6px 0 #78350F,
+      0 10px 24px rgba(0,0,0,.35),
+      inset 0 1px 0 rgba(255,255,255,.5);
+    position:relative;
+    z-index:2;
+    letter-spacing:.2px;
+    text-align:center;
+    transition:.15s;
+  }
+
+  /* =========================================================
+     دکمه ارسال
+     ========================================================= */
+  .submit-btn{
+    width:100%;
+    background:linear-gradient(135deg, #2563EB 0%, #1E40AF 50%, #1E3A8A 100%);
+    color:#fff;
+    border:none;
+    border-radius:var(--radius);
+    padding:19px;
+    font-size:17px;
+    font-weight:800;
+    font-family:inherit;
+    cursor:pointer;
+    transition:.2s;
+    margin-top:8px;
+    box-shadow:var(--shadow-md), inset 0 1px 0 rgba(255,255,255,.25);
+    min-height:60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .submit-btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 55%);
+    pointer-events:none;
+  }
+  .submit-btn:hover{filter:brightness(1.06);transform:translateY(-2px)}
+  .submit-btn:active{transform:translateY(0) scale(.99)}
+  .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+  /* =========================================================
+     گزینه‌های برجسته
+     ========================================================= */
+  .locked-features{
+    background:var(--success-bg);
+    border:1.5px dashed var(--success-border);
+    border-radius:var(--radius-sm);
+    padding:16px 18px;
+    margin-bottom:20px;
+  }
+  .locked-features .lock-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:15px;
+    color:#065F46;
+    padding:6px 0;
+    font-weight:700;
+    line-height:1.6;
+  }
+  .locked-features .lock-item::before{
+    content:"✓";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--success);
+    color:#fff;
+    font-weight:900;
+    font-size:13px;
+    flex-shrink:0;
+  }
+  .locked-note{
+    font-size:13.5px;
+    color:#065F46;
+    margin-top:12px;
+    line-height:1.85;
+    border-top:1px solid var(--success-border);
+    padding-top:12px;
+  }
+
+  /* =========================================================
+     پاسخ تیکت / گفتگو
+     ========================================================= */
+  .reply-card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    margin-top:18px;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  .reply-card h3{
+    font-size:19px;
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:10px;
+  }
+  .reply-card > p{
+    font-size:14.5px;
+    color:var(--text-soft);
+    margin-bottom:16px;
+    line-height:1.95;
+  }
+  .reply-card input,
+  .reply-card textarea{
+    width:100%;
+    background:var(--surface-soft);
+    border:1.5px solid transparent;
+    border-radius:var(--radius-sm);
+    padding:15px 16px;
+    font-size:16px;
+    font-family:inherit;
+    color:var(--text);
+    outline:none;
+    transition:.2s;
+    line-height:1.7;
+  }
+  .reply-card input:focus,
+  .reply-card textarea:focus{
+    border-color:var(--primary);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(30,64,175,.12);
+  }
+  .reply-card textarea{
+    resize:vertical;
+    min-height:110px;
+    line-height:1.85;
+  }
+  .reply-box{
+    margin-top:16px;
+    padding:16px 18px;
+    background:var(--surface-soft);
+    border-radius:var(--radius-sm);
+    border-right:4px solid var(--primary);
+    font-size:15px;
+    line-height:1.9;
+    display:none;
+    color:var(--text);
+  }
+  .reply-box.show{display:block}
+  .reply-box.pending{border-right-color:var(--warn);background:var(--warn-bg)}
+  .reply-box.rejected{border-right-color:var(--danger);background:var(--danger-bg)}
+
+  /* =========================================================
+     کادر ارسال پیام جدید
+     ========================================================= */
+  .new-message-block{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1.5px dashed var(--line);
+    display:none;
+  }
+  .new-message-block.show{display:block;animation:fade .35s ease}
+  .new-message-block .nm-title{
+    font-size:15.5px;
+    font-weight:800;
+    color:var(--primary-dark);
+    margin-bottom:10px;
+    line-height:1.7;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .new-message-block .nm-desc{
+    font-size:13.5px;
+    color:var(--text-soft);
+    line-height:1.85;
+    margin-bottom:14px;
+    padding:12px 14px;
+    background:var(--primary-light);
+    border-radius:var(--radius-sm);
+    border-right:3px solid var(--primary);
+  }
+  .new-message-block textarea{
+    width:100%;
+    background:var(--surface-soft);
+    border:1.5px solid transparent;
+    border-radius:var(--radius-sm);
+    padding:15px 16px;
+    font-size:16px;
+    font-family:inherit;
+    color:var(--text);
+    outline:none;
+    transition:.2s;
+    resize:vertical;
+    min-height:120px;
+    line-height:1.85;
+    margin-bottom:12px;
+  }
+  .new-message-block textarea:focus{
+    border-color:var(--primary);
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(30,64,175,.12);
+  }
+
+  /* =========================================================
+     هشدار قرمز کوچک
+     ========================================================= */
+  .save-warning{
+    font-size:12.5px;
+    color:var(--danger);
+    font-weight:700;
+    text-align:center;
+    margin-top:10px;
+    line-height:1.7;
+  }
+
+  /* =========================================================
+     قفل فرم
+     ========================================================= */
+  .form-locked-note{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 22px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    font-size:14.5px;
+    color:var(--text-soft);
+    line-height:2;
+  }
+  .form-locked-note b{color:var(--primary-dark)}
+
+  /* =========================================================
+     صفحه موفقیت
+     ========================================================= */
+  .success-screen{
+    position:fixed;
+    inset:0;
+    background:var(--bg);
+    z-index:9999;
+    display:none;
+    overflow-y:auto;
+    padding:30px 16px;
+  }
+  .success-screen.show{display:block;animation:fade .4s ease}
+  @keyframes fade{
+    from{opacity:0;transform:scale(.98)}
+    to{opacity:1;transform:scale(1)}
+  }
+  .success-inner{max-width:640px;margin:0 auto}
+  .success-icon{
+    width:88px;height:88px;
+    margin:20px auto 20px;
+    background:linear-gradient(135deg, #34D399 0%, #059669 100%);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:46px;
+    color:#fff;
+    animation:pop .5s ease .2s both;
+    box-shadow:0 10px 30px rgba(5,150,105,.35);
+  }
+  @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+  .success-inner h2{
+    text-align:center;
+    font-size:22px;
+    margin-bottom:16px;
+    color:var(--text);
+    line-height:1.6;
+    font-weight:800;
+  }
+  .success-inner .msg{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    font-size:15px;
+    line-height:2.1;
+    color:var(--text-soft);
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .success-inner .msg b{color:var(--primary-dark)}
+
+  .tracking{
+    background:linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border:1.5px dashed var(--primary);
+    border-radius:var(--radius-sm);
+    padding:18px 16px;
+    margin-top:18px;
+    position:relative;
+    text-align:center;
+  }
+  .tracking .tracking-label{
+    position:absolute;
+    top:-11px;
+    right:16px;
+    background:var(--danger);
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+    padding:2px 10px;
+    border-radius:8px;
+    letter-spacing:.3px;
+    box-shadow:0 3px 8px rgba(220,38,38,.35);
+  }
+  .tracking .tracking-text{
+    font-size:13.5px;
+    color:var(--text-soft);
+    margin-bottom:8px;
+  }
+  .tracking .code{
+    color:var(--primary-dark);
+    font-weight:800;
+    font-family:monospace;
+    font-size:22px;
+    letter-spacing:2px;
+    display:inline-block;
+    background:#fff;
+    padding:8px 16px;
+    border-radius:10px;
+    border:1.5px solid rgba(30,64,175,.2);
+    min-width:180px;
+  }
+  .copy-code-btn{
+    display:block;
+    width:100%;
+    margin-top:12px;
+    background:linear-gradient(135deg, #2563EB 0%, #1E40AF 50%, #1E3A8A 100%);
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:14px;
+    font-size:16px;
+    font-weight:800;
+    font-family:inherit;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 8px 22px -8px rgba(30,64,175,.55), inset 0 1px 0 rgba(255,255,255,.25);
+    position:relative;
+    overflow:hidden;
+  }
+  .copy-code-btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 55%);
+    pointer-events:none;
+  }
+  .copy-code-btn:hover{filter:brightness(1.06)}
+  .copy-code-btn:active{transform:scale(.98)}
+  .copy-code-btn.copied{
+    background:linear-gradient(135deg, #34D399 0%, #059669 100%);
+  }
+
+  /* =========================================================
+     فوتر
+     ========================================================= */
+  footer{
+    text-align:center;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-top:30px;
+    line-height:2;
+  }
+
+  /* =========================================================
+     موبایل
+     ========================================================= */
+  @media(max-width:480px){
+    .form-card,
+    .intro-card{padding:22px 18px}
+    .form-card h2{font-size:18px}
+    .field label{font-size:15.5px}
+    .sticky-ad{font-size:16px;padding:22px 14px;min-height:88px}
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     AD-1: تبلیغ شناور بالا
+     ========================================================= -->
+<a href="https://www.rosha-24.ir/x7q" class="sticky-ad" target="_blank" rel="noopener">
+  <span class="sticky-icon">🎁</span>
+  <span>۱۲۴ میلیون تومان طلا، فقط با ۳۹ هزار تومان</span>
+  <span class="arrow">←</span>
+</a>
+
+<div class="wrap">
+
+  <!-- ================= هدر / متن معرفی ================= -->
+  <div class="intro-card">
+    <div class="intro-title">🚨 ثبت درخواست استخدام رسمی آغاز شد!</div>
+
+    <p><b>💼 فقط استخدام رسمی و قانونی با بررسی تخصص و سابقه کاری شما</b></p>
+
+    <p style="margin-top:8px"><b>⏳ ظرفیت بررسی درخواست‌ها است.</b></p>
+
+    <p>درخواست شما پس از ثبت، توسط کارشناسان بررسی می‌شود و بر اساس سن، تحصیلات، تخصص، سابقه کاری و شرایط شما، موقعیت‌های شغلی متناسب بررسی و معرفی خواهند شد.</p>
+
+    <hr>
+
+    <div class="intro-sub">🔥 شرایط کلی استخدام رسمی</div>
+
+    <p>📍 محل فعالیت: در تمامی استانهای کشور</p>
+    <p>💼 امکان بررسی مشاغل دولتی و نیمه دولتی ونیز بانکها بیمارستانها نیروهای مسلح و ...</p>
+    <p>⚖️ فرآیند استخدام به‌صورت قانونی و رسمی</p>
+    <p>🚫 بدون دریافت پیش‌پرداخت تنها ۶۰ روز کافی است تا شما را در یکی از نهادها و سازمانهای دولتی استخدام</p>
+
+    <hr>
+
+    <div class="intro-sub">💼 چه مشاغلی قابل بررسی هستند؟</div>
+
+    <p>طیف متنوعی از مشاغل در حوزه‌های مختلف قابل بررسی است.</p>
+    <p>کارشناسان بر اساس تحصیلات، تخصص، سوابق کاری و در صورت نداشتن تخصصهای لازم بر اساس علایق شغلی شما، موقعیت‌های متناسب را بررسی خواهند کرد.</p>
+    <p>⚠️ لطفاً فرم را با دقت و اطلاعات کامل تکمیل کنید؛ اطلاعات ثبت‌شده مبنای بررسی اولیه درخواست شما خواهد بود.</p>
+
+    <hr>
+
+    <div class="intro-sub">📋 مراحل بررسی و استخدام</div>
+
+    <p>🔹 ثبت اطلاعات و درخواست استخدام</p>
+    <p>🔹 بررسی شرایط و سوابق متقاضی</p>
+    <p>🔹 بررسی موقعیت‌های شغلی متناسب</p>
+    <p>🔹 معرفی فرصت شغلی مناسب</p>
+    <p>🔹 ادامه گفتگو و بررسی شرایط استخدام</p>
+    <p>🔹 در صورت رسیدن به نتیجه مطلوب، هماهنگی‌های لازم برای ادامه فرآیند انجام خواهد</p>
+
+    <hr>
+
+    <div class="intro-sub">📩 پاسخ‌گویی از طریق تیکت</div>
+
+    <p>پس از ثبت درخواست، کد رهگیری دریافت خواهید کرد.</p>
+    <p>پاسخ کارشناسان و مراحل بعدی از طریق همین بخش قابل پیگیری خواهد بود.</p>
+    <p>📞 در صورت رسیدن به نتیجه مطلوب پس از پایان گفتگوها در تیکت، کارشناسان ما با شما تماس خواهند گرفت.</p>
+
+    <hr>
+
+    <div class="intro-sub">🚨 آماده‌ای برای شروع مسیر استخدام؟</div>
+
+    <p>اگر به دنبال یک موقعیت شغلی رسمی و قانونی هستید، اطلاعات خود را با دقت ثبت کنید تا شرایط شما توسط کارشناسان بررسی شود.</p>
+    <p>💼 همین حالا درخواست استخدام خود را ثبت کنید.</p>
+    <p>⏳ ظرفیت بررسی درخواست‌ها محدود است.</p>
+  </div>
+
+  <!-- =========================================================
+       هشدار VPN
+       ========================================================= -->
+  <div class="vpn-warning">
+    <span class="vpn-icon">⛔</span>
+    <span class="vpn-line">درصورت روشن بودن VPN تیکت ارسال نمیشود</span>
+    <span class="vpn-line">لطفا ابتدا فیلتر شکن خود را خاموش کنید</span>
+  </div>
+
+  <!-- =========================================================
+       AD-2: تبلیغ نارنجی — دقیقاً بالای جمله مسئولیت
+       ========================================================= -->
+  <div class="ad-iframe-wrap">
+    <iframe class="ad-iframe"
+            src="https://rosha-24.ir/ad/t1/ad1.php"
+            loading="lazy"
+            scrolling="no"
+            title="تبلیغ طلا"></iframe>
+  </div>
+
+  <!-- ===== یادداشت بالای فرم ===== -->
+  <p class="form-note">مسئولیت صحت اطلاعات به عهده متقاضی می باشد</p>
+
+  <!-- ================= فرم ================= -->
+  <form id="ticketForm" novalidate>
+
+    <!-- ===== کارت ۱ ===== -->
+    <div class="form-card">
+      <h2><span class="num">۱</span> اطلاعات هویتی و محل سکونت</h2>
+
+      <div class="field">
+        <label>نام <span class="req">*</span></label>
+        <input type="text" name="first_name" required>
+      </div>
+
+      <div class="field">
+        <label>نام خانوادگی <span class="req">*</span></label>
+        <input type="text" name="last_name" required>
+      </div>
+
+      <div class="field">
+        <label>جنسیت <span class="req">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male" required><span>مرد</span></label>
+          <label><input type="radio" name="gender" value="female"><span>زن</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>سن دقیق <span class="req">*</span></label>
+        <input type="number" name="age" min="18" max="70" required>
+      </div>
+
+      <div class="field">
+        <label>استان یا شهر محل سکونت <span class="req">*</span></label>
+        <input type="text" name="city" required>
+      </div>
+
+      <div class="field">
+        <label>آیا فاقد سو سابقه هستید <span class="req">*</span></label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" name="has_passport" value="دارد">
+            <span class="checkbox-box"></span>
+            <span>بله، فاقد سو سابقه هستید</span>
+          </label>
+        </div>
+        <p class="field-hint">برای موقعیت‌های شغلی دولتی یا استخدام رسمی باید حتما فاقد سابقه باشید</p>
+      </div>
+
+      <div class="field" id="militaryField" style="display:none">
+        <label>وضعیت نظام وظیفه <span class="req">*</span></label>
+        <select name="military">
+          <option value="">انتخاب کنید...</option>
+          <option value="دارای کارت پایان خدمت">دارای کارت پایان خدمت</option>
+          <option value="دارای معافیت از خدمت پزشکی">دارای معافیت از خدمت پزشکی</option>
+          <option value="دارای معافیت از خدمت با سایر عناوین">دارای معافیت از خدمت با سایر عناوین</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         AD-3: تبلیغ کلوچه نادی — بین کارت ۱ و کارت ۲
+         ========================================================= -->
+    <div class="ad-iframe-wrap">
+      <iframe class="ad-iframe"
+              src="https://rosha-24.ir/ad/others/nadi.php"
+              loading="lazy"
+              scrolling="no"
+              title="تبلیغ کلوچه نادی"></iframe>
+    </div>
+
+    <!-- ===== کارت ۲ ===== -->
+    <div class="form-card">
+      <h2><span class="num">۲</span> تحصیلات، تخصص و سوابق کاری</h2>
+
+      <div class="field">
+        <label>میزان تحصیلات <span class="opt">(اختیاری)</span></label>
+        <textarea name="education" placeholder="مثال: کارشناسی مهندسی عمران"></textarea>
+      </div>
+
+      <div class="field">
+        <label>مدارک تخصصی <span class="opt">(اختیاری)</span></label>
+        <textarea name="certificates" placeholder="مدارک، گواهی‌نامه‌ها و دوره‌های تخصصی خود را ذکر کنید"></textarea>
+      </div>
+
+      <div class="field">
+        <label>سوابق کاری <span class="opt">(اختیاری)</span></label>
+        <textarea name="work_history" placeholder="مثال: ۳ سال کار در کارخانه، ۲ سال راننده..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>مهارت‌ها و تخصص‌های شغلی <span class="opt">(اختیاری)</span></label>
+        <textarea name="skills" placeholder="تخصص‌ها، مهارت‌ها و زمینه‌های کاری خود را بنویسید."></textarea>
+      </div>
+
+      <div class="field">
+        <label>علایق شغلی <span class="opt">(اختیاری)</span></label>
+        <textarea name="interests" placeholder="چه شغل‌هایی را ترجیح می‌دهید و در چه زمینه‌ای تمایل به فعالیت دارید؟"></textarea>
+      </div>
+    </div>
+
+    <!-- ===== کارت ۳ ===== -->
+    <div class="form-card">
+      <h2><span class="num">۳</span> انتظارات شغلی و مالی</h2>
+
+      <div class="locked-features">
+        <div class="lock-item">حقوق و مزایا متناسب با عنوان شغلی و شرایط استخدام تعیین می‌شود.</div>
+        <div class="lock-item">شرایط دقیق هر موقعیت قبل از ادامه فرآیند استخدام به متقاضی اطلاع داده می‌شود.</div>
+      </div>
+
+      <div class="field">
+        <label>حقوق مورد انتظار خود را انتخاب کنید <span class="req">*</span></label>
+        <select name="salary" required>
+          <option value="">انتخاب کنید...</option>
+          <option value="کمتر از ۲۵ میلیون تومان">کمتر از ۲۵ میلیون تومان</option>
+          <option value="۲۵ تا ۴۰ میلیون تومان">۲۵ تا ۴۰ میلیون تومان</option>
+          <option value="۴۰ تا ۶۰ میلیون تومان">۴۰ تا ۶۰ میلیون تومان</option>
+          <option value="۶۰ تا ۸۰ میلیون تومان">۶۰ تا ۸۰ میلیون تومان</option>
+          <option value="۸۰ میلیون تومان به بالا">۸۰ میلیون تومان به بالا</option>
+        </select>
+        <p class="field-hint">حقوق نهایی بر اساس عنوان شغلی، تخصص، سابقه کاری توسط ارگان یا سازمان مربوطه تعیین می‌شود.</p>
+      </div>
+
+      <div class="field">
+        <label>توضیحات تکمیلی <span class="opt">(اختیاری)</span></label>
+        <textarea name="notes" placeholder="اگر شرایط، مهارت یا درخواست خاصی دارید که لازم است کارشناسان بدانند، اینجا بنویسید."></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">ثبت درخواست استخدام ✈️</button>
+
+  </form>
+
+  <!-- ===== پیام قفل شدن فرم ===== -->
+  <div class="form-locked-note" id="lockedNote" style="display:none">
+    شما قبلاً یک درخواست استخدام ثبت کرده‌اید.<br>
+    برای پیگیری درخواست یا ارسال پیام جدید، از بخش <b>«مشاهده پاسخ درخواست استخدام»</b> در پایین استفاده کنید.
+  </div>
+
+  <!-- =========================================================
+       AD-4: زیر دکمه ارسال
+       ========================================================= -->
+  <a href="https://www.rosha-24.ir/x7q" class="ad4" target="_blank" rel="noopener" id="adBelowSubmit">
+    <span class="ad4-live">
+      <span class="dot"></span>
+      ۲۳۴ نفر همین الان ثبت‌نام کردن
+    </span>
+    <span class="ad4-title">
+      <b>۹۸٪</b> کسانی که فرم پر کردن، شانس قرعه‌کشی طلا رو هم ثبت کردن
+    </span>
+    <span class="ad4-cta">
+      منم می‌خوام ←
+    </span>
+  </a>
+
+  <!-- ================= پاسخ تیکت / گفتگو ================= -->
+  <div class="reply-card">
+    <h3>📬 مشاهده پاسخ درخواست استخدام</h3>
+    <p>اگر قبلاً درخواست استخدام ثبت کرده‌اید، کد رهگیری خود را وارد کنید تا وضعیت درخواست و پاسخ کارشناسان را مشاهده کنید.</p>
+    <div class="field">
+      <input type="text" id="trackCode" placeholder="مثال: TK-123456">
+    </div>
+    <button type="button" class="submit-btn" id="checkBtn" style="background:var(--surface);color:var(--primary);box-shadow:var(--shadow-sm);border:1.5px solid var(--primary);background-image:none;margin-top:12px">بررسی وضعیت درخواست</button>
+    <div class="reply-box" id="replyBox"></div>
+
+    <!-- ===== کادر ارسال پیام جدید ===== -->
+    <div class="new-message-block" id="newMessageBlock">
+      <div class="nm-title">✉️ ارسال پیام جدید</div>
+      <div class="nm-desc">اگر می‌خواهید توضیحات یا اطلاعات تکمیلی درباره درخواست استخدام خود ارسال کنید، پیام خود را در کادر زیر بنویسید.</div>
+      <textarea id="newMessageText" placeholder="متن پیام خود را اینجا بنویسید..."></textarea>
+      <button type="button" class="submit-btn" id="sendMsgBtn">ارسال پیام ✉️</button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       AD-5: پایین صفحه
+       ========================================================= -->
+  <a href="https://www.rosha-24.ir/x7q" class="ad5" target="_blank" rel="noopener">
+    <span class="ad5-urgent">⏰ قرعه‌کشی به‌زودی بسته می‌شه</span>
+    <span class="ad5-title">
+      قبل از اینکه بری، <b>شانست رو ثبت کن</b> — ۳۹ هزار تومان، شاید برنده‌ی طلا باشی
+    </span>
+    <span class="ad5-cta">
+      آخرین فرصت — الان ثبت‌نام کن ←
+    </span>
+  </a>
+
+  <footer>
+    © ۲۰۲۶ — تمامی حقوق محفوظ است.<br>
+    این صفحه صرفاً جهت ثبت درخواست استخدام است.
+  </footer>
+
+</div>
+
+<!-- =========================================================
+     صفحه موفقیت
+     ========================================================= -->
+<div class="success-screen" id="successScreen">
+  <div class="success-inner">
+    <div class="success-icon">✓</div>
+    <h2>درخواست استخدام شما با موفقیت ثبت شد</h2>
+    <div class="msg">
+      درخواست شما با موفقیت دریافت شد و در مرحله بررسی اولیه قرار گرفت.<br>
+      کارشناسان شرایط، تخصص و سوابق کاری شما را بررسی خواهند کرد.<br>
+      نتیجه بررسی و مراحل بعدی از طریق همین صفحه و بخش «<b>مشاهده پاسخ درخواست استخدام</b>» اعلام خواهد شد.
+
+      <div class="tracking">
+        <span class="tracking-label">مهم</span>
+        <div class="tracking-text">کد رهگیری شما:</div>
+        <span class="code" id="trackingCode">—</span>
+        <button type="button" class="copy-code-btn" id="copyCodeBtn">📋 کپی کد رهگیری</button>
+        <p class="save-warning">حتماً کد رهگیری خود را ذخیره کنید.</p>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         AD-6: داخل صفحه تبریک
+         ========================================================= -->
+    <a href="https://www.rosha-24.ir/x7q" class="ad5" style="margin-top:24px" target="_blank" rel="noopener">
+      <span class="ad5-urgent">⏰ قرعه‌کشی به‌زودی بسته می‌شه</span>
+      <span class="ad5-title">
+        قبل از اینکه بری، <b>شانست رو ثبت کن</b> — ۳۹ هزار تومان، شاید برنده‌ی طلا باشی
+      </span>
+      <span class="ad5-cta">
+        آخرین فرصت — الان ثبت‌نام کن ←
+      </span>
+    </a>
+
+    <button type="button" class="submit-btn" style="background:var(--surface);color:var(--primary-dark);box-shadow:var(--shadow-sm);border:1.5px solid var(--primary);margin-top:18px" id="closeSuccess">بازگشت به صفحه</button>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  // =========================================================
+  // API
+  // =========================================================
+  var API_TICKET = 'https://rosha-24.ir/ticket/api/ticket.php';
+  var API_CHECK  = 'https://rosha-24.ir/ticket/api/check_ticket.php';
+  var API_REPLY  = 'https://rosha-24.ir/ticket/api/reply_ticket.php';
+
+  // =========================================================
+  // توکن ۳۰ روزه
+  // =========================================================
+  var TOKEN_KEY = 'job98_tracking_token';
+  var TOKEN_TTL = 30 * 24 * 60 * 60 * 1000;
+
+  function saveTrackingCode(code){
+    try {
+      localStorage.setItem(TOKEN_KEY, JSON.stringify({ code: code, exp: Date.now() + TOKEN_TTL }));
+    } catch(e){}
+  }
+
+  function loadTrackingCode(){
+    try {
+      var raw = localStorage.getItem(TOKEN_KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj || !obj.code) return null;
+      if (obj.exp && Date.now() > obj.exp) {
+        localStorage.removeItem(TOKEN_KEY);
+        return null;
+      }
+      return obj.code;
+    } catch(e){ return null; }
+  }
+
+  // =========================================================
+  // بررسی IP ایران (فرانت‌اند)
+  // =========================================================
+  var ipIsIran = null; // null = نامشخص | true = ایران | false = خارج
+
+  async function checkIranIP(){
+    try {
+      var res = await fetch('https://ipwho.is/', { cache: 'no-store' });
+      var json = await res.json();
+      if (json && json.success === true && json.country_code) {
+        return json.country_code === 'IR';
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // =========================================================
+  // فیلدهای شرطی
+  // =========================================================
+  var genderRadios = document.querySelectorAll('input[name="gender"]');
+  var militaryField = document.getElementById('militaryField');
+  var militarySelect = militaryField.querySelector('select');
+
+  genderRadios.forEach(function(r){
+    r.addEventListener('change', function(){
+      if (r.value === 'male' && r.checked) {
+        militaryField.style.display = 'block';
+        militarySelect.required = true;
+      } else if (r.value === 'female' && r.checked) {
+        militaryField.style.display = 'none';
+        militarySelect.required = false;
+      }
+    });
+  });
+
+  // =========================================================
+  // عناصر
+  // =========================================================
+  var form = document.getElementById('ticketForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var lockedNote = document.getElementById('lockedNote');
+  var adBelowSubmit = document.getElementById('adBelowSubmit');
+  var checkBtn = document.getElementById('checkBtn');
+  var trackCodeInput = document.getElementById('trackCode');
+  var replyBox = document.getElementById('replyBox');
+  var newMessageBlock = document.getElementById('newMessageBlock');
+  var newMessageText = document.getElementById('newMessageText');
+  var sendMsgBtn = document.getElementById('sendMsgBtn');
+  var successScreen = document.getElementById('successScreen');
+  var trackingCodeEl = document.getElementById('trackingCode');
+  var copyCodeBtn = document.getElementById('copyCodeBtn');
+  var formNote = document.querySelector('.form-note');
+
+  // =========================================================
+  // قفل فرم
+  // =========================================================
+  var existingCode = loadTrackingCode();
+
+  function lockForm(){
+    if (form) form.style.display = 'none';
+    if (formNote) formNote.style.display = 'none';
+    if (adBelowSubmit) adBelowSubmit.style.display = 'none';
+    if (lockedNote) lockedNote.style.display = 'block';
+  }
+
+  if (existingCode) {
+    trackCodeInput.value = existingCode;
+    lockForm();
+  }
+
+  // =========================================================
+  // اجرای چک IP در شروع
+  // =========================================================
+  (async function initIPCheck(){
+    ipIsIran = await checkIranIP();
+    if (ipIsIran === false) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '⛔ فیلترشکن را خاموش کنید';
+    }
+  })();
+
+  // =========================================================
+  // ارسال فرم اول
+  // =========================================================
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    // بررسی دوباره IP قبل از ارسال
+    if (ipIsIran === false) {
+      alert('⛔ لطفاً ابتدا فیلترشکن خود را خاموش کنید و صفحه را رفرش کنید.');
+      return;
+    }
+
+    if (ipIsIran === null) {
+      ipIsIran = await checkIranIP();
+      if (ipIsIran === false) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⛔ فیلترشکن را خاموش کنید';
+        alert('⛔ لطفاً ابتدا فیلترشکن خود را خاموش کنید و صفحه را رفرش کنید.');
+        return;
+      }
+    }
+
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var fd = new FormData(form);
+    var data = Object.fromEntries(fd.entries());
+    if (data.gender !== 'male')   delete data.military;
+
+    var passportCb = form.querySelector('input[name="has_passport"]');
+    data.has_passport = passportCb && passportCb.checked ? 'دارد' : 'ندارد';
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'در حال ارسال...';
+
+    try {
+      var res = await fetch(API_TICKET, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      var json = await res.json();
+
+      if (!json.ok) {
+        alert(json.msg || 'خطا در ارسال. دوباره تلاش کنید.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'ثبت درخواست استخدام ✈️';
+        return;
+      }
+
+      var code = json.tracking_code || '—';
+      saveTrackingCode(code);
+      trackingCodeEl.textContent = code;
+      trackCodeInput.value = code;
+
+      successScreen.classList.add('show');
+      window.scrollTo(0,0);
+      form.reset();
+      militaryField.style.display = 'none';
+    } catch (err) {
+      alert('خطا در ارسال. لطفاً دوباره تلاش کنید.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'ثبت درخواست استخدام ✈️';
+    }
+  });
+
+  // =========================================================
+  // کپی کد رهگیری
+  // =========================================================
+  copyCodeBtn.addEventListener('click', function(){
+    var code = trackingCodeEl.textContent.trim();
+    if (!code || code === '—') return;
+
+    function done(){
+      copyCodeBtn.classList.add('copied');
+      copyCodeBtn.textContent = '✓ کپی شد';
+      setTimeout(function(){
+        copyCodeBtn.classList.remove('copied');
+        copyCodeBtn.textContent = '📋 کپی کد رهگیری';
+      }, 2000);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(done).catch(function(){
+        manualCopyCode(code, done);
+      });
+    } else {
+      manualCopyCode(code, done);
+    }
+  });
+
+  function manualCopyCode(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    try { document.execCommand('copy'); cb(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  document.getElementById('closeSuccess').addEventListener('click', function(){
+    successScreen.classList.remove('show');
+  });
+
+  // =========================================================
+  // بررسی پاسخ تیکت
+  // =========================================================
+  checkBtn.addEventListener('click', async function(){
+    var code = trackCodeInput.value.trim();
+    if (!code) { alert('لطفاً کد رهگیری را وارد کنید.'); return; }
+
+    replyBox.className = 'reply-box show';
+    replyBox.textContent = 'در حال بررسی...';
+    newMessageBlock.classList.remove('show');
+
+    try {
+      var res = await fetch(API_CHECK + '?code=' + encodeURIComponent(code));
+      var json = await res.json();
+
+      if (json.status === 'pending') {
+        replyBox.className = 'reply-box show pending';
+        replyBox.innerHTML = '⏳ درخواست شما در حال بررسی است. لطفاً بعداً دوباره مراجعه کنید.';
+        newMessageBlock.classList.add('show');
+      } else if (json.status === 'answered') {
+        replyBox.className = 'reply-box show';
+        replyBox.innerHTML = '<b style="color:var(--primary-dark)">پاسخ درخواست استخدام شما:</b><br>' + json.reply;
+        newMessageBlock.classList.add('show');
+      } else if (json.status === 'rejected') {
+        replyBox.className = 'reply-box show rejected';
+        replyBox.innerHTML = '❌ در حال حاضر امکان پذیرش درخواست شما وجود ندارد.';
+        newMessageBlock.classList.add('show');
+      } else {
+        replyBox.className = 'reply-box show rejected';
+        replyBox.textContent = 'کد رهگیری یافت نشد. لطفاً کد واردشده را بررسی کنید.';
+      }
+    } catch (err) {
+      replyBox.className = 'reply-box show rejected';
+      replyBox.textContent = 'خطا در ارتباط با سرور. لطفاً بعداً تلاش کنید.';
+    }
+  });
+
+  // =========================================================
+  // ارسال پیام جدید
+  // =========================================================
+  sendMsgBtn.addEventListener('click', async function(){
+    var code = trackCodeInput.value.trim();
+    var msg = newMessageText.value.trim();
+
+    if (!code) { alert('کد رهگیری موجود نیست.'); return; }
+    if (!msg) { alert('لطفاً متن پیام را وارد کنید.'); return; }
+
+    sendMsgBtn.disabled = true;
+    sendMsgBtn.textContent = 'در حال ارسال...';
+
+    try {
+      if (API_REPLY) {
+        var res = await fetch(API_REPLY, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ thread_code: code, message: msg })
+        });
+        var json = await res.json();
+        if (!json.ok) {
+          alert(json.msg || 'خطا در ارسال پیام.');
+          sendMsgBtn.disabled = false;
+          sendMsgBtn.textContent = 'ارسال پیام ✉️';
+          return;
+        }
+      }
+
+      trackingCodeEl.textContent = code;
+      successScreen.classList.add('show');
+      window.scrollTo(0,0);
+      newMessageText.value = '';
+
+      setTimeout(function() {
+        checkBtn.click();
+      }, 800);
+
+    } catch (err) {
+      alert('خطا در ارسال پیام. لطفاً دوباره تلاش کنید.');
+    } finally {
+      sendMsgBtn.disabled = false;
+      sendMsgBtn.textContent = 'ارسال پیام ✉️';
+    }
+  });
+
+})();
+</script>
+
+</body>
+  </html>
